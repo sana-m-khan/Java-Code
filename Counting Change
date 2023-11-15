@@ -1,0 +1,44 @@
+import java.util.Scanner;
+
+public class CountingChange
+{
+  public static  void main(String [] args){
+  Scanner in = new Scanner(System.in);   
+  
+  int quarters, _quarters, dimes, _dimes, nickels, _nickels, pennies, _pennies;
+  double dollars;
+  
+  System.out.println("How many quarters do you have? ");
+  quarters = in.nextInt();
+  
+  System.out.print("How many dimes do you have? ");
+  dimes = in.nextInt();
+  
+  System.out.print("How many nickels do you have? ");
+  nickels = in.nextInt();
+  
+  System.out.print("How many pennies do you have? ");
+  pennies = in.nextInt();
+ 
+  dollars = (quarters * 25) + (dimes * 10) + (nickels * 5) + (pennies * 1);
+  //$%.2f
+  System.out.println("Given your change:");
+  System.out.println(quarters + (" quarters, ") + dimes + (" dimes, ") + nickels 
+  + (" nickels, and ") + pennies + (" pennies."));
+  System.out.println("You have " + dollars / 100.0 + " dollars.");
+  
+  
+  dollars = (int)(dollars);
+  _quarters = (int)(dollars / 25);
+  dollars = (int)(dollars) % 25;
+  _dimes = (int)(dollars / 10);
+  dollars = (int)(dollars) % 10;
+  _nickels = (int)(dollars / 5);
+  dollars = (int)(dollars) % 5;
+  _pennies = (int)(dollars);
+  
+  System.out.println("Optimized form of coins: ");
+  System.out.print(_quarters + (" quarters, ") + _dimes + (" dimes, ") + _nickels
+  + (" nickels, and ") + _pennies + (" pennies."));
+ }
+}
